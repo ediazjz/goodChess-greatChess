@@ -31,4 +31,6 @@
 	}
 </script>
 
-<svelte:component this={selected} {color} />
+<div class="sticky z-20">
+	<svelte:component this={selected} {color} />
+</div>
