@@ -1,9 +1,7 @@
 <script lang="ts">
-	import Board from './../components/board.svelte';
+	import { Drawer } from '../components';
 </script>
 
-<main class="flex h-screen w-screen items-center justify-center bg-teal-600">
-	<div class="overflow-hidden rounded-md shadow-xl">
-		<Board />
-	</div>
+<main class="flex h-screen w-screen items-center justify-center bg-gray-300">
+	<Drawer />
 </main>

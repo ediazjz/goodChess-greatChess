@@ -18,7 +18,7 @@
 	}
 </script>
 
-<div class="board flex flex-col-reverse">
+<div class={`board flex flex-col-reverse`}>
 	{#each sides as row, rowIndex}
 		<div class="flex">
 			{#each sides as column, colIndex}
