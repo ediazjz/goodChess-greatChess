@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Piece from './piece.svelte';
 	import Square from './square.svelte';
-	import { convertColumnIndexToLetter, standard as standardPosition } from '$lib';
+	import { createBoard, convertColumnIndexToLetter, standard as standardPosition } from '$lib';
 
 	type TBoard = {
 		size?: number;
@@ -16,9 +16,13 @@
 
 		return standardPosition[position];
 	}
+
+	const board = createBoard();
 </script>
 
-<div class={`board flex flex-col-reverse`}>
+<div
+	class={`board flex flex-col-reverse ${board.orientation === 'black' ? 'rotate-180 transform' : ''}`}
+>
 	{#each sides as row, rowIndex}
 		<div class="flex">
 			{#each sides as column, colIndex}

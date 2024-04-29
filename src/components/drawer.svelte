@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Board from './board.svelte';
+	import { createBoard } from '$lib';
 
-	let isWhiteOriented: boolean = $state(true);
+	const board = createBoard();
 </script>
 
 <div class="rounded-xl bg-teal-600 p-8">
@@ -11,7 +12,7 @@
 
 	<button
 		class="mt-8 rounded-md bg-emerald-800 fill-white p-3 transition-colors duration-200 ease-linear hover:bg-emerald-900"
-		onclick={() => (isWhiteOriented = !isWhiteOriented)}
+		onclick={board.toggleOrientation}
 	>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-6">
 			<!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
